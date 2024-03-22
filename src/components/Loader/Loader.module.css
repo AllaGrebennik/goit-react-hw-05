@@ -1,0 +1,5 @@
+.loader {
+  display: flex;
+  justify-content: left;
+  padding: 0 32px;
+}

@@ -1,0 +1,23 @@
+.container {
+  margin-bottom: 20px;
+  padding: 0 32px;
+}
+
+.details {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.info {
+  padding-left: 20px;
+  width: 80%;
+}
+
+.infoAdd {
+  padding: 0 32px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+}
+
+.isActive {
+  color: rgb(175, 14, 14);
+}

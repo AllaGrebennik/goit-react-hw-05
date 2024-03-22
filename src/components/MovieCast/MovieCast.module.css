@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  margin-top: 20px;
+  padding: 0 32px;
+}
+
+.item {
+  display: flex;
+  gap: 20px;
+  padding: 8px 0;
+}
