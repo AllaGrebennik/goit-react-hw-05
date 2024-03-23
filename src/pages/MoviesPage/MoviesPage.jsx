@@ -34,7 +34,11 @@ function MoviesPage() {
             <MoviesSearch />
             {isLoading && <Loader />}
             {error && <b>Oops! Error HTTP! Reload please!</b>}
-            <MovieList movies={searchMovies} />
+            {searchMovies.length > 0 ? (
+                <MovieList movies={searchMovies} />
+                      ) : (
+                <p>There is no movies for this query</p>
+            )}
         </>
     );
 };
