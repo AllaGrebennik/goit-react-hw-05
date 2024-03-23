@@ -12,7 +12,7 @@ function MovieList({ movies }) {
                     </Link>
                 </li>
             ))}
-        </ul>
+        </ul>    
     );
 };
 

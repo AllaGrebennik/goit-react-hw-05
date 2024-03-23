@@ -4,6 +4,7 @@ import { getSearchMovies } from "../../movie-api";
 import MovieList from "../../components/MovieList/MovieList";
 import MoviesSearch from "../../components/MoviesSearch/MoviesSearch";
 import Loader from '../../components/Loader/Loader';
+import toast, { Toaster } from 'react-hot-toast';
 
 function MoviesPage() {
     const [searchParams, setSearchParams] = useSearchParams();
@@ -19,6 +20,10 @@ function MoviesPage() {
                 setIsLoading(true);
                 setError(false);
                 const data = await getSearchMovies(query);
+                if (data.length===0) {
+                    toast.error('There is no movies for this query');
+                    return;
+                }           
                 setSearchMovies(data);
             } catch (error) {
                 setError(true);
@@ -34,16 +39,10 @@ function MoviesPage() {
             <MoviesSearch />
             {isLoading && <Loader />}
             {error && <b>Oops! Error HTTP! Reload please!</b>}
-            {searchMovies.length > 0 ? (
-                <MovieList movies={searchMovies} />
-                      ) : (
-                <p>There is no movies for this query</p>
-            )}
+            <MovieList movies={searchMovies} />
+            <Toaster position="top-right" />  
         </>
     );
 };
 
 export default MoviesPage;
-
-
-
