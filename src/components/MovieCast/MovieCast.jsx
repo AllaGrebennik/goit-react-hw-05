@@ -9,8 +9,7 @@ function MovieCast() {
     const [actors, setActors] = useState([]);
     const [error, setError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    const defaultImg = '<https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg>';
-
+    const defaultImg = 'https://dl-media.viber.com/10/share/2/long/vibes/icon/image/0x0/95e0/5688fdffb84ff8bed4240bcf3ec5ac81ce591d9fa9558a3a968c630eaba195e0.jpg';
     useEffect(() => {
         if (!movieId) return;
         async function getData() {
@@ -37,10 +36,10 @@ function MovieCast() {
                     {actors.map(({ cast_id, character, name, profile_path }) => (
                         <li key={cast_id} className={css.item}>
                             <img src={profile_path
-                                    ? `https://image.tmdb.org/t/p/w500/${profile_path}`
-                                    : defaultImg}
+                                ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                                : defaultImg}
                                     width={250}
-                                    alt="poster"
+                                    alt={name}
                             />
                             <div>
                                 <h2>{name}</h2>
